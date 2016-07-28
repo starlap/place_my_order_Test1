@@ -12,11 +12,11 @@
     "api": "place-my-order-api --port 7070",
     "test": "testee src/test.html --browsers firefox --reporter Spec",
     "start": "done-serve --proxy http://localhost:7070 --port 8080",
-  "develop": "done-serve --develop --proxy http://localhost:7070 --port 8080",
+    "develop": "done-serve --develop --proxy http://localhost:7070 --port 8080",
     "document": "documentjs",
     "build": "node build"
   },
-  "main": "place-my-order/index.stache!done-autorender",
+  "main": "production.html",
   "files": [
     "src"
   ],
@@ -46,6 +46,7 @@
     "place-my-order-api": "^0.4.4",
     "place-my-order-assets": "^0.1.7",
     "steal": "^0.16.0",
+    "steal-platform": "0.0.4",
     "steal-socket.io": "^2.0.3"
   },
   "devDependencies": {
@@ -54,8 +55,15 @@
     "donejs-cli": "^0.9.4",
     "donejs-deploy": "^0.4.0",
     "funcunit": "~3.0.0",
+    "steal-cordova": "^0.1.4",
+    "steal-nw": "^0.1.4",
     "steal-qunit": "^0.1.1",
     "steal-tools": "^0.16.0",
     "testee": "^0.2.4"
+  },
+  "window": {
+    "width": 1000,
+    "height": 600,
+    "toolbar": false
   }
 }

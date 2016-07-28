@@ -2,23 +2,24 @@ import can from 'can';
 import superMap from 'can-connect/can/super-map/';
 import tag from 'can-connect/can/tag/';
 import 'can/map/define/define';
+import baseUrl from '../service-base-url';
 
-export const Restaurant = can.Map.extend({
+export const State = can.Map.extend({
   define: {}
 });
 
-Restaurant.List = can.List.extend({
-  Map: Restaurant
+State.List = can.List.extend({
+  Map: State
 }, {});
 
-export const restaurantConnection = superMap({
-  url: '/api/restaurants',
-  idProp: '_id',
-  Map: Restaurant,
-  List: Restaurant.List,
-  name: 'restaurant'
+export const stateConnection = superMap({
+  url: baseUrl + '/api/states',
+  idProp: 'short',
+  Map: State,
+  List: State.List,
+  name: 'state'
 });
 
-tag('restaurant-model', restaurantConnection);
+tag('state-model', stateConnection);
 
-export default Restaurant;
+export default State;
